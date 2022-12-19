@@ -1,0 +1,94 @@
+
+.bg{
+    position: relative;
+    background: url("./bg.jpg");
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    z-index: 1;
+}
+.bg::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    opacity: 0.6;
+    z-index: -1;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+.container .title{
+    align-self: center;
+    color: #fff;
+    margin-bottom: 2rem;
+
+}
+.searchWeather{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.searchWeather input{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+}
+
+.searchWeather button{
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #333;
+        padding: .5rem 1rem;
+        border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+.searchWeather button:hover{
+    background-color: transparent;
+        color: #fff;
+}
+
+.data{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.card{
+    background-color: rgb(198, 216, 216) !important;
+}
+
+.alertOutline{
+   border: 4px solid red !important;
+}
+
+@media screen and (max-width: 500px) {
+    .searchWeather input{
+        padding: 1rem;
+    }
+    
+    .searchWeather button{
+        padding: .5rem;
+    } 
+}
+@media screen and (max-width: 300px) {
+    .searchWeather{
+        flex-direction: column;
+    }
+
+    .container .title{
+        font-size: 1.2rem;
+    
+    }
+}
